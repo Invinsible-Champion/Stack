@@ -127,36 +127,4 @@ void postorder_traversal(node* root) {
     printf("%d ", root->data);
 }
 
-int main() {
-    tree* tree1 = init_tree();
-    tree* tree2 = init_tree();
 
-    int preorder[] = {1, 2, 4, 5, 3, 6, 7};
-    int inorder[]  = {4, 2, 5, 1, 6, 3, 7};
-    int n1 = sizeof(preorder) / sizeof(preorder[0]);
-    build_tree_pre_in(tree1, preorder, inorder, n1);
-    print_tree(tree1->root);
-    printf("Inorder: ");
-    inorder_traversal(tree1->root);
-    printf("\nPreorder: ");
-    preorder_traversal(tree1->root);
-    printf("\nPostorder: ");
-    postorder_traversal(tree1->root);
-    printf("\n");
-
-    int postorder[] = {4, 5, 2, 6, 7, 3, 1};
-    int n2 = sizeof(postorder) / sizeof(postorder[0]);
-    build_tree_post_in(tree2, postorder, inorder, n2);
-    print_tree(tree2->root);
-    printf("Inorder: ");
-    inorder_traversal(tree2->root);
-    printf("\nPreorder: ");
-    preorder_traversal(tree2->root);
-    printf("\nPostorder: ");
-    postorder_traversal(tree2->root);
-    printf("\n");
-    
-    free(tree1);
-    free(tree2);
-    return 0;
-}
